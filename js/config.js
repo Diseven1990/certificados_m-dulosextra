@@ -15,7 +15,7 @@ window.CERT_CONFIG = {
       // Página 1: campos preenchidos
       fields: {
         // Linha de cima (nome)
-    name: { pageIndex: 0, x: 200, y: 300, w: 260, fontSize: 22.76 },
+    name: { pageIndex: 0, x: 210, y: 320, w: 260, fontSize: 22.76 },
 cc:   { pageIndex: 0, x: 300, y: 300, w: 260, fontSize: 22.76 },
 grade:{ pageIndex: 0, x: 65,  y: 135, w: 200, fontSize: 40 }
       },
