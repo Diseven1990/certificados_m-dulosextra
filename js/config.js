@@ -9,6 +9,10 @@
 window.CERT_CONFIG = {
   courses: [
     {
+      id: "photoshop",
+      label: "Adobe Photoshop",
+      template: "templates/photoshop.pdf",
+      fields: {
   name: {
     pageIndex: 0,
     x: 413,
