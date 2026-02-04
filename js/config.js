@@ -15,11 +15,9 @@ window.CERT_CONFIG = {
       // Página 1: campos preenchidos
       fields: {
         // Linha de cima (nome)
-        name: { pageIndex: 0, x: 534.5, y: 413.0, w: 164.5, fontSize: 22.76 },
-        // Linha de baixo (CC)
-        cc:   { pageIndex: 0, x: 579.5, y: 352.5, w: 107.5, fontSize: 22.76 },
-        // Nota final (dentro da coroa, aprox. centro)
-        grade:{ pageIndex: 0, x: 75.0,  y: 120.0, w: 170.0, fontSize: 54 }
+    name: { pageIndex: 0, x: 505, y: 445, w: 260, fontSize: 22.76 },
+cc:   { pageIndex: 0, x: 505, y: 385, w: 260, fontSize: 22.76 },
+grade:{ pageIndex: 0, x: 70,  y: 135, w: 200, fontSize: 54 }
       },
       // Estilo (podes afinar depois)
       style: {
