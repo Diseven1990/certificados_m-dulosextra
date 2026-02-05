@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>Editor de Certificados</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{color-scheme:dark}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b0b0b;color:#f2f2f2}
+.wrap{max-width:1100px;margin:0 auto;padding:24px}
+.card{background:#151515;border:1px solid #2a2a2a;border-radius:14px;padding:18px}
+h1{font-size:20px;margin:0 0 12px}
+h2{font-size:16px;margin:20px 0 10px}
+label{font-size:12px;color:#ccc;display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #333;background:#0f0f0f;color:#fff;box-sizing:border-box}
+button{padding:10px 14px;border-radius:10px;border:1px solid #333;background:#1f1f1f;color:#fff;cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center}
+canvas{width:100%;border:1px solid #2a2a2a;border-radius:12px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px}
+.small{font-size:11px;color:#aaa;line-height:1.4}
+.badge{display:inline-block;padding:3px 8px;border:1px solid #333;border-radius:999px;font-size:11px;color:#ddd}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+  <h1>Editor de Certificados <span class="badge">2 páginas</span></h1>
+  <p class="small">Passo 1: carrega o template. Passo 2: escolhe o campo e clica no sítio exato. Só depois fica disponível gerar/descarregar.</p>
+
+  <div class="grid">
+    <div>
+      <label>Curso</label>
+      <select id="course"></select>
+    </div>
+    <div>
+      <label>Nota (%)</label>
+      <input id="grade" type="number" min="0" max="100" step="1" placeholder="Ex.: 95">
+    </div>
+    <div>
+      <label>Nome do formando</label>
+      <input id="name" placeholder="Ex.: Diogo Cruz">
+    </div>
+    <div>
+      <label>N.º CC</label>
+      <input id="cc" placeholder="Ex.: 13938171">
+    </div>
+  </div>
+
+  <div class="row">
+    <button id="btnGenerate" disabled>Gerar PDF</button>
+    <a id="btnDownload" style="display:none;color:#9fd3ff" download>Download</a>
+    <span id="readyState" class="small"></span>
+  </div>
+
+  <h2>Calibração (editor por clique)</h2>
+  <div class="row">
+    <select id="calField" style="max-width:220px">
+      <option value="name">Nome</option>
+      <option value="cc">CC</option>
+      <option value="grade">Nota</option>
+    </select>
+    <button id="btnLoadPreview" type="button">Carregar template</button>
+    <button id="btnClear" type="button">Limpar marcações</button>
+  </div>
+
+  <canvas id="previewCanvas"></canvas>
+
+  <textarea id="calOut" class="mono" rows="7" readonly
+    placeholder="Aqui aparecem as coordenadas finais para colar no config.js"></textarea>
+
+  <p class="small">Tudo corre no browser. Os dados não são guardados. Para publicar, usa GitHub Pages (recomendado) ou um servidor local.</p>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.2.67/build/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.2.67/build/pdf.worker.min.js";
+</script>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script src="js/calibrate.js"></script>
+</body>
+</html>
