@@ -12,7 +12,7 @@ fields: {
   name:  { pageIndex: 0, x: 228.7, y: 302.5, w: 320, fontSize: 22.76 },
   cc:    { pageIndex: 0, x: 382.8, y: 274.8, w: 320, fontSize: 22.76 },
   grade: { pageIndex: 0, x: 45.0, y: 122.8, w: 200, fontSize: 40 }
-}
+},
       rules: { goldFrom: 80 } // >=80 ouro, <80 cinzento
     }
   ]
