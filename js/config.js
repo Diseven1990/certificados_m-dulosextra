@@ -8,12 +8,11 @@ window.CERT_CONFIG = {
         gold: "templates/photoshop_ouro.pdf",
         grey: "templates/photoshop_cin.pdf"
       },
-      fields: {
-        // Página 1 (index 0): só escrevemos na 1.ª página. A 2.ª fica intacta do template.
-        name:  { pageIndex: 0, x: 413, y: 68,  w: 320, fontSize: 22.76 },
-        cc:    { pageIndex: 0, x: 413, y: 25,  w: 320, fontSize: 22.76 },
-        grade: { pageIndex: 0, x: 180, y: 215, w: 200, fontSize: 56 }
-      },
+     fields: {
+  name:  { pageIndex: 0, x: 231.6, y: 306.3, w: 320, fontSize: 22.76 },
+  cc:    { pageIndex: 0, x: 383.8, y: 283.4, w: 320, fontSize: 22.76 },
+  grade: { pageIndex: 0, x: 67.9, y: 132.4, w: 200, fontSize: 56 }
+},
       rules: { goldFrom: 80 } // >=80 ouro, <80 cinzento
     }
   ]
